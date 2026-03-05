@@ -1,0 +1,27 @@
+import React from "react";
+import PropTypes from "prop-types";
+
+function UserCard({ name, age, isStudent }) {
+  return (
+    <div>
+      <h3>Name: {name}</h3>
+      <p>Age: {age}</p>
+      <p>Status: {isStudent ? "Student" : "Not a Student"}</p>
+    </div>
+  );
+}
+
+// ✅ Props Validation
+UserCard.propTypes = {
+  name: PropTypes.string.isRequired,
+  age: PropTypes.number,
+  isStudent: PropTypes.bool
+};
+
+// ✅ Default Props
+UserCard.defaultProps = {
+  age: 18,
+  isStudent: false
+};
+
+export default UserCard;
