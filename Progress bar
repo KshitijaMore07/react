@@ -1,0 +1,42 @@
+import React from "react";
+
+function ProgressBar({ progress }) {
+  return (
+    <div style={styles.container}>
+      <div
+        style={{
+          ...styles.filler,
+          width: `${progress}%`
+        }}
+      >
+        <span style={styles.label}>{progress}%</span>
+      </div>
+    </div>
+  );
+}
+
+const styles = {
+  container: {
+    height: "30px",
+    width: "100%",
+    backgroundColor: "#e0e0de",
+    borderRadius: "20px",
+    margin: "20px 0"
+  },
+  filler: {
+    height: "100%",
+    backgroundColor: "#4caf50",
+    borderRadius: "inherit",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    color: "white",
+    fontWeight: "bold",
+    transition: "width 0.5s ease-in-out"
+  },
+  label: {
+    padding: "5px"
+  }
+};
+
+export default ProgressBar;
