@@ -1,13 +1,14 @@
-import React from "react";
-import Form from "./Form";
-
-
+import logo from './logo.svg';
+import './App.css';
+import DigitalLock from './component/digitallock';
+import CounterContext from './component/countercontext';
 function App() {
   return (
     <div>
-
-      <Form/>
-    </div>
+    <DigitalLock/>
+   <CounterContext/>
+   <CounterContext/>
+   </div>
   );
 }
 
