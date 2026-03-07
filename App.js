@@ -1,22 +1,13 @@
-import {useState, useEffect} from "react";
-import UserContext from "./UserContext";
-import Dashboard from "./Dashboard";
+import React from "react";
+import Form from "./Form";
+
+
 function App() {
-
-  const [user, setUser]=useState("Guest");
-
-  useEffect(()=>{
-
-    console.log("User changed to : ",user);
-  },[user]);
   return (
+    <div>
 
-    <UserContext.Provider value={{user, setUser}}>
-
-      <h1>Mini App Using React Hooks</h1>
-      <Dashboard/>
-    </UserContext.Provider>
-   
+      <Form/>
+    </div>
   );
 }
 
