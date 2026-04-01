@@ -1,0 +1,67 @@
+const http=require("http");
+const server=http.createServer(function(req,res)
+{
+    res.write("Welcome to Node JS Server.");
+    res.end();
+});
+
+server.listen(3000);
+console.log("Server running on http://localhost:3000");
+---------------------------------------------------
+var fs=require('fs')
+
+async function fileOperations(){
+    try{
+        await fs.writeFile('demo.txt','Hello Swanandi You are learning file system!');
+        console.log("File created.");
+
+        const data=await fs.readFile("demo.txt","utf8");
+        console.log("File Read.",data);
+
+        await fs.appendFile("demo.txt","\n Welcome to Node.js");
+        console.log("Data appended.");
+
+        await fs.unlink("demo.txt");
+        console.log("File Deleted.");
+    }
+    catch(err){
+       console.log(err.message);
+    }
+}
+
+fileOperations();
+------------------------------------------------------
+let name="Swanandi";
+let course="M.Sc. Computer Science"
+
+console.log("Student name:",name);
+console.log("Course:",course);
+
+let a=10;
+let b=20;
+let sum=a+b;
+
+console.log("Sum=",sum);
+------------------------------------------------------
+var fs=require('fs')
+
+fs.writeFile('demo.txt','Hello Swanandi You are learning file system!',(err)=>{
+    if(err) throw err;
+    console.log("File created successfully!");
+});
+
+fs.readFile("demo.txt","utf8",(err,data)=>{
+    if(err) throw err;
+    console.log("File Content:",data);
+});
+
+fs.appendFile("demo.txt","\n Welcome to Node.js",(err)=>{
+    if(err) throw err;
+    console.log("Data Appended");
+});
+
+const del=fs.unlink("demo.txt",(err) => {
+    if (err) throw err;
+    console.log("Deleted File.");
+});
+------------------------------------------------------
