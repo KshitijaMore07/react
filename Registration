@@ -1,0 +1,41 @@
+const express = require('express');
+const bodyParser = require('body-parser');
+
+const app = express();
+
+// Middleware
+app.use(bodyParser.urlencoded({ extended: true }));
+
+// Show form
+app.get('/', (req, res) => {
+    res.send(`
+        <h2>Registration Form</h2>
+        <form method="POST" action="/register">
+            Name: <input type="text" name="name"><br><br>
+            Email: <input type="email" name="email"><br><br>
+            Password: <input type="password" name="password"><br><br>
+            <button type="submit">Register</button>
+        </form>
+    `);
+});
+
+// Handle form
+app.post('/register', (req, res) => {
+    const { name, email, password } = req.body;
+
+    // Validation
+    if (!name || !email || !password) {
+        return res.send("All fields are required ❌");
+    }
+
+    if (password.length < 6) {
+        return res.send("Password must be at least 6 characters ❌");
+    }
+
+    res.send(`Registration Successful ✅ <br> Welcome, ${name}`);
+});
+
+// Start server
+app.listen(3000, () => {
+    console.log("Server running at http://localhost:3000");
+});
