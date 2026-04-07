@@ -1,0 +1,17 @@
+import React from "react";
+import Navbar from "../components/Navbar";
+import MedicineForm from "../components/MedicineForm";
+import AlertList from "../components/AlertList";
+
+function Dashboard() {
+  return (
+    <div>
+      <Navbar />
+      <h2>PharmaAgent Dashboard</h2>
+      <MedicineForm />
+      <AlertList />
+    </div>
+  );
+}
+
+export default Dashboard;
