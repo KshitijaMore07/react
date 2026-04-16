@@ -1,0 +1,4 @@
+useEffect(() => {
+  window.addEventListener("keydown", handleKey);
+  return () => window.removeEventListener("keydown", handleKey);
+}, []); // attach once
