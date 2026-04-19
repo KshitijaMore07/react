@@ -1,0 +1,7 @@
+var log = {
+  info: function(msg){
+    console.log(msg);
+  }
+};
+
+module.exports = log;
