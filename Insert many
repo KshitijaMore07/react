@@ -1,0 +1,4 @@
+db.students.insertMany([
+  { name: "A" },
+  { name: "B" }
+])
